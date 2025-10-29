@@ -1,7 +1,11 @@
 package main
-
-import "fmt"
+type Recipient struct {
+	Name  string
+	Email string
+}
 
 func main() {
-	fmt.Println("Welcome to email-dispatcher")
+	recipientChannel := make(chan Recipient)
+	
+	loadRecipient("email.csv", recipientChannel)
 }
