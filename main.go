@@ -10,7 +10,7 @@ type Recipient struct {
 func main() {
 	recipientChannel := make(chan Recipient)
 	
-	go loadRecipient("email.csv", recipientChannel)
+	go loadRecipient("./assets/email.csv", recipientChannel)
 
 	var wg sync.WaitGroup
 	workerCount := 5
